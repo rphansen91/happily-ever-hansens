@@ -1,0 +1,5 @@
+node_modules/
+.ttg/
+private.key
+.env
+.serverless

@@ -1,0 +1,11 @@
+.countdown {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.countdown > div {
+  flex: 1;
+  margin: 4px;
+  box-sizing: border-box;
+}
