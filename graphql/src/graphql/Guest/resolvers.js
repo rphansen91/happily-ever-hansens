@@ -113,6 +113,7 @@ module.exports = {
     id: ({ _id, id }) => (_id || id || "").toString(),
     full_name: ({ first_name, last_name }) =>
       [first_name, last_name].filter(v => v).join(" "),
+    plus_one_id: ({ plus_one_id }) => (plus_one_id || "").toString(),
     is_plus_one: ({ plus_one_id }) => !!plus_one_id,
     plus_one: ({ plus_one_id }, _, { db }) =>
       plus_one_id && db.guests.findOne({ _id: ObjectID(plus_one_id) }),
