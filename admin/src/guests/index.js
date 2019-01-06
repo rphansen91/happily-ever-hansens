@@ -62,7 +62,6 @@ const exporter = guests => {
 };
 
 const MealField = ({ source, record = {} }) => {
-  console.log(record[source]);
   switch (record[source]) {
     case "Salmon":
       return <Fish />;
@@ -98,13 +97,14 @@ export const GuestEdit = props => (
       <TextInput source="first_name" />
       <TextInput source="last_name" />
       <TextInput source="phone" />
-      <ReferenceInput source="plus_one_id" reference="guest">
+      <ReferenceInput source="plus_one_id" reference="guest" allowEmpty>
         <SelectInput source="full_name" optionText="full_name" />
       </ReferenceInput>
       <ReferenceArrayInput
         label="Children"
         source="children_ids"
         reference="guest"
+        allowEmpty
       >
         <SelectArrayInput source="full_name" optionText="full_name" />
       </ReferenceArrayInput>
